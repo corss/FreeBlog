@@ -1,0 +1,166 @@
+﻿<style type="text/css">
+    #app {
+        background: url(/images/loginbj.png) top center no-repeat;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    a:hover {
+        color: white;
+    }
+
+    .main {
+        width: 844px;
+        height: 492px;
+        background: url(/images/loginmainbj.png);
+    }
+
+        .main .title {
+            font-size: 25px;
+            color: #34A8FF;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .main .item {
+            width: 300px;
+            margin: 15px 60px 0;
+            padding: 10px;
+            border-bottom: 1px solid #E1E1E1;
+        }
+
+            .main .item img {
+                width: 22px;
+                vertical-align: middle;
+            }
+
+            .main .item input {
+                height: 40px;
+                margin-left: 20px;
+                border: 0;
+            }
+
+    .code {
+        width: 90px !important;
+        height: 40px !important;
+        cursor: pointer;
+    }
+
+    .mybtn {
+        width: 220px;
+        height: 60px;
+        display: block;
+        text-align: center;
+        background-image: url('/images/loginbtn.png');
+        line-height: 55px;
+        font-size: 24px;
+        color: #fff;
+        background-size: 100% 100%;
+        margin: 0 auto;
+    }
+</style>
+@Html.AntiForgeryToken()
+<div id="app">
+    <div class="main">
+        <div style="width: 450px; margin: 50px 30px 0 0; float: right;">
+            <div class="title">通用管理平台</div>
+            <div class="item">
+                <img src="~/images/loginuser.png" />
+                <input placeholder="用户名" v-model="username" class="inputNoBorder" autocomplete="off" maxlength="20" />
+            </div>
+            <div class="item">
+                <img src="~/images/loginpwd.png" />
+                <input type="password" placeholder="登录密码" v-model="password" class="inputNoBorder" autocomplete="off" maxlength="20" />
+            </div>
+            <div class="item">
+                <img src="~/images/logincode.png">
+                <input placeholder="验证码" v-model="code" class="inputNoBorder" autocomplete="off" maxlength="4" style="width:140px;" />
+                <img id="imgVCode" class="code" v-bind:src=imgCode alt="验证码" title="看不清，换一张" v-on:click="setCode" />
+            </div>
+            <div style="margin: 40px;">
+                <a v-on:click="mysubmit" class="mybtn">登录</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    let app = new Vue({
+        el: '#app',
+        data: {
+            imgCode: '',
+            username: '',
+            password: '',
+            code: '',
+            token:''
+        },
+        created: function () {
+            this.token = $('input[name=__RequestVerificationToken]').val()
+            this.setCode();
+            var that = this;
+            //回车事件
+            document.onkeyup = function (e) {
+                var key = window.event.keyCode;
+                if (key == 13) {
+                    that.mysubmit();
+                }
+            }
+        },
+        methods: {
+            setCode: function () {
+                this.imgCode = '/Index/VerificationCode?t=' + new Date().getTime();
+            },
+            mysubmit: function () {
+                let that = this;
+                let codek = getCookie("vcode");
+                console.log(codek);
+                console.log(that.code);
+                if (!that.username) {
+                    layers.Info("请填写用户名");
+                } else if (!that.password) {
+                    layers.Info("请填写密码");
+                } else if (that.code != codek) {
+                    layers.Info("验证码错误");
+                    that.setCode();
+                    that.code = '';
+                } else {
+                    $.ajaxSetup({
+                        data: { '__RequestVerificationToken': this.token }
+                    });
+                    $.ajax({
+                        url: "/Index/LoginVerification",
+                        type: "post",
+                        datatype: "json",
+                        data: {
+                            username: that.username,
+                            password: that.password,
+                            platform: GetBrowserPlatform(),
+                            browser: getExplore(),
+                            width: window.screen.width,
+                            height: window.screen.height,
+                        },
+                        async: true,
+                        success: function (e) {
+                            if (e.success) {
+                                location.href = "/Main/Index";
+                            } else {
+                                layers.Info(e.msg);
+                                that.setCode();
+                                that.code = '';
+                            }
+                        },
+                        error: function () {
+                            layers.Info("账号不存在");
+                            that.setCode();
+                            that.code = '';
+                        },
+                    });
+                }
+
+            }
+        }
+    });
+</script>

@@ -1,0 +1,1722 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FreeBlog.Model</name>
+    </assembly>
+    <members>
+        <member name="T:FreeBlog.Model.MessageModel`1">
+            <summary>
+            通用返回信息类
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.MessageModel`1.status">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.MessageModel`1.success">
+            <summary>
+            操作是否成功
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.MessageModel`1.msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.MessageModel`1.msgDev">
+            <summary>
+            开发者信息
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.MessageModel`1.response">
+            <summary>
+            返回数据集合
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Model.MessageModel`1.Success(System.String)">
+            <summary>
+            返回成功
+            </summary>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Model.MessageModel`1.Success(System.String,`0)">
+            <summary>
+            返回成功
+            </summary>
+            <param name="msg">消息</param>
+            <param name="response">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Model.MessageModel`1.Fail(System.String)">
+            <summary>
+            返回失败
+            </summary>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Model.MessageModel`1.Fail(System.String,`0)">
+            <summary>
+            返回失败
+            </summary>
+            <param name="msg">消息</param>
+            <param name="response">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Model.MessageModel`1.Message(System.Boolean,System.String,`0)">
+            <summary>
+            返回消息
+            </summary>
+            <param name="success">失败/成功</param>
+            <param name="msg">消息</param>
+            <param name="response">数据</param>
+            <returns></returns>
+        </member>
+        <member name="P:FreeBlog.Model.MessageModel.status">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.MessageModel.success">
+            <summary>
+            操作是否成功
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.MessageModel.msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.MessageModel.response">
+            <summary>
+            返回数据集合
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.Article">
+            <summary>
+            分配任务
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.Synopsis">
+            <summary>
+            简介
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.Contents">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.FileUrl">
+            <summary>
+            文件地址
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.FileFormat">
+            <summary>
+            文件格式
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.UserID">
+            <summary>
+            添加用户ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.State">
+            <summary>
+            状态 1.未审核 2.已审核 3.标记删除
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.DepartmentID">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.EndDate">
+            <summary>
+            截止时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.CompleteDate">
+            <summary>
+            实际完成时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.IsComplete">
+            <summary>
+            是否完成
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.NumMonth">
+            <summary>
+            每月报指定次数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.NumYear">
+            <summary>
+            每年报指定次数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.Month">
+            <summary>
+            指定月份，可存多个，按 “,”分割，如：,1,2,3, 代表123月份
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Article.Numth">
+            <summary>
+            指定月份对应次数,可存多个，，按 “,”分割,并与月份一一对应 
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.ArticleMenu">
+            <summary>
+            评测项目
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ArticleMenu.Names">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ArticleMenu.ENames">
+            <summary>
+            存英文名或副标题
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ArticleMenu.ParentID">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ArticleMenu.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ArticleMenu.State">
+            <summary>
+            状态 1.未审核 2.已审核 3.标记删除
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ArticleMenu.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.ArticleMenu_Article">
+            <summary>
+            任务和项目关联表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ArticleMenu_Article.ArticleMenuID">
+            <summary>
+            评测项目栏目ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ArticleMenu_Article.ArticleID">
+            <summary>
+            分配任务ID
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.Config">
+            <summary>
+            全局配置表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Config.Title">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Config.Number">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Config.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.ConfigBase">
+            <summary>
+            网站基本配置
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ConfigBase.Names">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ConfigBase.Title">
+            <summary>
+            首页Title
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ConfigBase.Keywords">
+            <summary>
+            首页关键字
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ConfigBase.Description">
+            <summary>
+            首页描述
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.ConfigBase.JSCode">
+            <summary>
+            首页JS代码
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.Department">
+            <summary>
+            部门表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Department.deptAddress">
+            <summary>
+            部门地址
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Department.deptCode">
+            <summary>
+            部门编码
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Department.deptPhone">
+            <summary>
+            部门电话
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Department.likeId">
+            <summary>
+            上级部门id集合
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Department.manager">
+            <summary>
+            部门经理
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Department.name">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Department.open">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Department.orderNum">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Department.parentName">
+            <summary>
+            上级部门名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Department.pid">
+            <summary>
+            上级部门id
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.ExceptionLog.IsSolve">
+            <summary>
+            是否解决
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.ExceptionLog.Type">
+            <summary>
+            类型 1.异常 2.文件不存在 3.登录失败 4.其它
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.Log.Log">
+            <summary>
+            日志父类
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.Log.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.Log.UserID">
+            <summary>
+            触发的用户ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.Log.ProjectID">
+            <summary>
+            触发的项目ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.Log.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.LoginLog.Os">
+            <summary>
+            触发的系统
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.LoginLog.Browser">
+            <summary>
+            触发的浏览器
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.LoginLog.R_W">
+            <summary>
+            分辨率宽度 ResolutionWidth
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.LoginLog.R_H">
+            <summary>
+            分辨率高度 ResolutionHeight
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.LoginLog.CompanyID">
+            <summary>
+            公司ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Log.LoginLog.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.Menu">
+            <summary>
+            菜单表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.code">
+            <summary>
+            权限标识
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.label">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.name">
+            <summary>
+            路由名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.icon">
+            <summary>
+            菜单图标
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.open">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.orderNum">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.parentId">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.parentName">
+            <summary>
+            菜单的父级名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.path">
+            <summary>
+            路由地址
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.type">
+            <summary>
+            类型 (0 目录 1菜单，2按钮)
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.updateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.url">
+            <summary>
+            路由页面对应的路径
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Menu.remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Module.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Module.LinkUrl">
+            <summary>
+            API链接地址
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Module.Controller">
+            <summary>
+            控制器名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Module.Action">
+            <summary>
+            Action名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Module.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Module.Code">
+            <summary>
+            菜单编号
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Module.OrderSort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Module.Description">
+            <summary>
+            /描述
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Module.Enabled">
+            <summary>
+            是否激活
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.PoliceModel.PoliceForce">
+            <summary>
+            干警队伍
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceForce.Names">
+            <summary>
+            队伍名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceForce.PID">
+            <summary>
+            队长ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceForce.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceForce.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceForce.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.PoliceModel.PoliceGrade">
+            <summary>
+            分数列表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceGrade.PID">
+             <summary>
+            分数来源所属活动表ID，0表示由分数管理添加
+             </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceGrade.OID">
+            <summary>
+            分数所属干警唯一编号
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceGrade.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceGrade.Grade">
+            <summary>
+            志愿服务分数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceGrade.GradeC">
+            <summary>
+            学习强国分数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceGrade.AddDate">
+             <summary>
+            添加时间，即年度
+             </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.PoliceModel.PoliceInfo">
+            <summary>
+            干警列表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceInfo.Names">
+            <summary>
+            干警名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceInfo.OID">
+            <summary>
+            唯一个人编号
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceInfo.PFID">
+            <summary>
+            所属队伍
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceInfo.PFRole">
+            <summary>
+            角色 1.组长 2.组员
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceInfo.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceInfo.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceInfo.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceInfo.GradeF">
+            <summary>
+            志愿者服务分
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceInfo.Grade">
+            <summary>
+            学习强国分（1000=1志愿者服务分）
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.PoliceModel.Policeproject">
+            <summary>
+            干警活动
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.Policeproject.Name">
+            <summary>
+            活动名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.Policeproject.MenuID">
+            <summary>
+            活动所属项目ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.Policeproject.Context">
+            <summary>
+            活动内容
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.Policeproject.AddDate">
+            <summary>
+            活动日期
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.Policeproject.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.Policeproject.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.PoliceModel.PoliceprojectMenu">
+            <summary>
+            干警项目
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceprojectMenu.Names">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceprojectMenu.ParentID">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceprojectMenu.Fid">
+            <summary>
+            负责小队ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceprojectMenu.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceprojectMenu.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceprojectMenu.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.PoliceModel.PoliceprojectMenu_Policeproject">
+            <summary>
+            干警项目和任务关联表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceprojectMenu_Policeproject.ProjectMenuID">
+            <summary>
+            干警项目ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.PoliceModel.PoliceprojectMenu_Policeproject.ProjectID">
+            <summary>
+            分配任务ID
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.Project.PlanCommentInfo">
+            <summary>
+            工作日志
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.PlanCommentInfo.ProjectID">
+            <summary>
+            项目
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.PlanCommentInfo.ProjectNodeID">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.PlanCommentInfo.PlanID">
+            <summary>
+            计划
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.PlanCommentInfo.Title">
+            <summary>
+            评论
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.PlanCommentInfo.UserID">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.PlanCommentInfo.IsConfirm">
+            <summary>
+            是否确认
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.PlanCommentInfo.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.PlanCommentInfo.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.Project.ProjectPlanInfo">
+            <summary>
+            项目计划
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.ProjectID">
+            <summary>
+            项目
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.ProjectNodeID">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.ProjectModifyID">
+            <summary>
+            修改意见，无填0
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.UserID">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.Contents">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.BeginDate">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.EndDate">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.CompleteDate">
+            <summary>
+            实际完成时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.Principal">
+            <summary>
+            负责人
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.IsComplete">
+            <summary>
+            是否完成
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.CommentCount">
+            <summary>
+            评论数量
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectPlanInfo.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.Project.ProjectUserInfo">
+            <summary>
+            项目成员
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectUserInfo.ProjectID">
+            <summary>
+            项目
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectUserInfo.ProjectNodeID">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectUserInfo.UserID">
+            <summary>
+            成员
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectUserInfo.Role">
+            <summary>
+            角色 1.组长 2.组员
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectUserInfo.Proportion">
+            <summary>
+            比例
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectUserInfo.Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectUserInfo.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectUserInfo.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Project.ProjectUserInfo.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Role.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Role.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Role.Menus">
+            <summary>
+            菜单权限
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Role.ArticleMenus">
+            <summary>
+            栏目权限
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Role.Modules">
+            <summary>
+            接口权限
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Role_value.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Role_value.Menu_name">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.Role_value.Action_Type">
+            <summary>
+            权限类型，Show:显示,Delete:删除,update:更新,Add:新增
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.StandingBook">
+            <summary>
+            台账表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.StandingBook.FID">
+            <summary>
+            所属任务ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.StandingBook.DepartmentID">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.StandingBook.Names">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.StandingBook.file">
+            <summary>
+            附件
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.StandingBook.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.StandingBook.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.StandingBook.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.Models.UserInfo">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.State">
+            <summary>
+            状态 1未审核 2已审核 3禁用 4被标记删除
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.accountNonLocked">
+            <summary>
+            账号未锁定
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.authorities">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.credentialsNonExpired">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.deptId">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.depName">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.isAdmin">
+            <summary>
+            是否是管理员：1是，0不是
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.loginName">
+            <summary>
+            登录名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.mobile">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.nickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.updateTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.Models.UserInfo.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIProUserViewModel.ProjectID">
+            <summary>
+            项目
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIProUserViewModel.ProjectNodeID">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIProUserViewModel.UserID">
+            <summary>
+            成员
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIProUserViewModel.Role">
+            <summary>
+            角色 1.组长 2.组员
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIProUserViewModel.Proportion">
+            <summary>
+            比例
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIProUserViewModel.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIProUserViewModel.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APITeamMembersViewModel.ID">
+            <summary>
+            成员ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APITeamMembersViewModel.Name">
+            <summary>
+            成员ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APITeamMembersViewModel2.ID">
+            <summary>
+            成员ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APITeamMembersViewModel2.Name">
+            <summary>
+            成员ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.HeadPortrait">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.FullName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.Position">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.IdCard">
+            <summary>
+            身份证
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.Gender">
+            <summary>
+            性别,0:未知,1:男,2:女
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.MobilePhone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.QQ">
+            <summary>
+            QQ
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.Mail">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.State">
+            <summary>
+            状态 1未审核 2已审核 3禁用 4被标记删除
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.RoleID">
+            <summary>
+            角色ID 1.超级管理员 2.区域管理员 3.支部管理员 4.用户
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.APIUserViewModel.CompanyID">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticleMenuViewModel.id">
+            <summary>
+            栏目ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticleMenuViewModel.Names">
+            <summary>
+            栏目名
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.Contents">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.EndDate">
+            <summary>
+            截止时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.CompleteDate">
+            <summary>
+            实际完成时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.FileUrl">
+            <summary>
+            文件地址
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.IsComplete">
+            <summary>
+            是否完成
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.State">
+            <summary>
+            状态 1.未审核 2.已审核 3.标记删除
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.Synopsis">
+            <summary>
+            简介
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.DepartmentID">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.ArticleMenuIDs">
+            <summary>
+            栏目类型
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.NumMonth">
+            <summary>
+            每月报指定次数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.NumYear">
+            <summary>
+            每年报指定次数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.Month">
+            <summary>
+            指定月份，可存多个，按 “,”分割，如：,1,2,3, 代表123月份
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ArticlePostViewModel.Numth">
+            <summary>
+            指定月份对应次数,可存多个，，按 “,”分割,并与月份一一对应 
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.ViewModels.Api.ELTreeViewModel">
+            <summary>
+            树状图
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.PoliceprojectModel.Name">
+            <summary>
+            活动名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.PoliceprojectModel.policeGrades">
+            <summary>
+            分数列表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.PoliceprojectModel.MenuID">
+            <summary>
+            活动所属项目ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.PoliceprojectModel.Context">
+            <summary>
+            活动内容
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.PoliceprojectModel.AddDate">
+            <summary>
+            活动日期
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.PoliceprojectModel.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.PoliceprojectModel.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ProUserInfoViewModel.ProjectID">
+            <summary>
+            项目
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ProUserInfoViewModel.ProjectNodeID">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ProUserInfoViewModel.UserID">
+            <summary>
+            成员
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ProUserInfoViewModel.UserName">
+            <summary>
+            成员名
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ProUserInfoViewModel.Role">
+            <summary>
+            角色 1.组长 2.组员
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ProUserInfoViewModel.Proportion">
+            <summary>
+            比例
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ProUserInfoViewModel.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Api.ProUserInfoViewModel.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleMenuModel.ArticleMenuID">
+            <summary>
+            栏目ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleMenuModel.Names">
+            <summary>
+            栏目名
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.ID">
+            <summary>
+            分配任务ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.ArticleMenu">
+            <summary>
+            栏目
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.PageView">
+            <summary>
+            浏览次数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.ImgUrl">
+            <summary>
+            图片地址
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.FileUrl">
+            <summary>
+            文件地址
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.State">
+            <summary>
+            状态 1.未审核 2.已审核 3.标记删除
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.EndDate">
+            <summary>
+            截止时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.CompleteDate">
+            <summary>
+            实际完成时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.IsComplete">
+            <summary>
+            是否完成
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.NumMonth">
+            <summary>
+            每月报指定次数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.NumYear">
+            <summary>
+            每年报指定次数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.Month">
+            <summary>
+            指定月份，可存多个，按 “,”分割，如：,1,2,3, 代表123月份
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.ArticleViewModel.Numth">
+            <summary>
+            指定月份对应次数,可存多个，，按 “,”分割,并与月份一一对应 
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.ViewModels.BaseViewModel">
+            <summary>
+            通用类
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.ViewModels.DepartmentViewModel">
+            <summary>
+            部门表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModel.deptAddress">
+            <summary>
+            部门地址
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModel.deptCode">
+            <summary>
+            部门编码
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModel.deptPhone">
+            <summary>
+            部门电话
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModel.likeId">
+            <summary>
+            上级部门id集合
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModel.manager">
+            <summary>
+            部门经理
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModel.name">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModel.open">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModel.orderNum">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModel.parentName">
+            <summary>
+            上级部门名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModel.pid">
+            <summary>
+            上级部门id
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.ViewModels.DepartmentViewModelNull">
+            <summary>
+            部门表
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModelNull.deptAddress">
+            <summary>
+            部门地址
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModelNull.deptCode">
+            <summary>
+            部门编码
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModelNull.deptPhone">
+            <summary>
+            部门电话
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModelNull.likeId">
+            <summary>
+            上级部门id集合
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModelNull.manager">
+            <summary>
+            部门经理
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModelNull.name">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModelNull.open">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModelNull.orderNum">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModelNull.parentName">
+            <summary>
+            上级部门名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.DepartmentViewModelNull.pid">
+            <summary>
+            上级部门id
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.ExceptionLogViewModel.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.ExceptionLogViewModel.UserID">
+            <summary>
+            触发的用户ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.ExceptionLogViewModel.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.ExceptionLogViewModel.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.ExceptionLogViewModel.IsSolve">
+            <summary>
+            是否解决
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.ExceptionLogViewModel.Type">
+            <summary>
+            类型 1.异常 2.文件不存在 3.登录失败 4.其它
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.LoginLogViewModel.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.LoginLogViewModel.UserID">
+            <summary>
+            触发的用户ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.LoginLogViewModel.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.LoginLogViewModel.Os">
+            <summary>
+            触发的系统
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.LoginLogViewModel.Browser">
+            <summary>
+            触发的浏览器
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.LoginLogViewModel.R_W">
+            <summary>
+            分辨率宽度 ResolutionWidth
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.Log.LoginLogViewModel.R_H">
+            <summary>
+            分辨率高度 ResolutionHeight
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.ViewModels.MenuRoleView">
+            <summary>
+            查看菜单权限表
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.ViewModels.MenuViewModel">
+            <summary>
+            用于绑定页面上的菜单
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceGradeModel.OID">
+            <summary>
+            干警唯一ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceGradeModel.Pid">
+            <summary>
+            参加活动ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceGradeModel.Pname">
+            <summary>
+            参加活动名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceGradeModel.Name">
+            <summary>
+            干警名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceGradeModel.GradeC">
+            <summary>
+            爱国分数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceGradeModel.Grade">
+            <summary>
+            志愿者分数
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceprojectMenuModel.MenuID">
+            <summary>
+            栏目ID
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceprojectMenuModel.Names">
+            <summary>
+            栏目名
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceProModel.Name">
+            <summary>
+            活动名称
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceProModel.ProjectMenu">
+            <summary>
+            栏目
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceProModel.Context">
+            <summary>
+            活动内容
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceProModel.AddDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceProModel.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.PoliceProModel.Sorting">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Model.ViewModels.RoleViewModel">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Model.ViewModels.UserViewModel.RoleName">
+            <summary>
+            对应角色名称
+            </summary>
+        </member>
+    </members>
+</doc>

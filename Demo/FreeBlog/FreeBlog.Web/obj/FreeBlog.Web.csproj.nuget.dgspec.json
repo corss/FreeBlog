@@ -1,0 +1,511 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Web\\FreeBlog.Web.csproj": {}
+  },
+  "projects": {
+    "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Api\\FreeBlog.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Api\\FreeBlog.Api.csproj",
+        "projectName": "FreeBlog.Api",
+        "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Api\\FreeBlog.Api.csproj",
+        "packagesPath": "C:\\Users\\PX\\.nuget\\packages\\",
+        "outputPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Common\\FreeBlog.Common.csproj": {
+                "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Common\\FreeBlog.Common.csproj"
+              },
+              "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Model\\FreeBlog.Model.csproj": {
+                "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Model\\FreeBlog.Model.csproj"
+              },
+              "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Service\\FreeBlog.Service.csproj": {
+                "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Service\\FreeBlog.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "EPPlus.Core": {
+              "target": "Package",
+              "version": "[1.5.4, )"
+            },
+            "FreeSpire.Office": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "FreeSql.DbContext": {
+              "target": "Package",
+              "version": "[2.5.200, )"
+            },
+            "FreeSql.Provider.SqlServer": {
+              "target": "Package",
+              "version": "[2.5.200, )"
+            },
+            "FreeSql.Provider.Sqlite": {
+              "target": "Package",
+              "version": "[2.5.200, )"
+            },
+            "FreeSql.Repository": {
+              "target": "Package",
+              "version": "[2.5.200, )"
+            },
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.DotNet.PlatformAbstractions": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "MiniProfiler.Shared": {
+              "target": "Package",
+              "version": "[4.2.22, )"
+            },
+            "RazorEngine.NetCore": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.5, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "System.Linq.Expressions": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "UEditorNetCore": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Common\\FreeBlog.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Common\\FreeBlog.Common.csproj",
+        "projectName": "FreeBlog.Common",
+        "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Common\\FreeBlog.Common.csproj",
+        "packagesPath": "C:\\Users\\PX\\.nuget\\packages\\",
+        "outputPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Office.Interop.Word": {
+              "target": "Package",
+              "version": "[15.0.4797.1003, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.IService\\FreeBlog.IService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.IService\\FreeBlog.IService.csproj",
+        "projectName": "FreeBlog.IService",
+        "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.IService\\FreeBlog.IService.csproj",
+        "packagesPath": "C:\\Users\\PX\\.nuget\\packages\\",
+        "outputPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.IService\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Common\\FreeBlog.Common.csproj": {
+                "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Common\\FreeBlog.Common.csproj"
+              },
+              "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Model\\FreeBlog.Model.csproj": {
+                "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Model\\FreeBlog.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Model\\FreeBlog.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Model\\FreeBlog.Model.csproj",
+        "projectName": "FreeBlog.Model",
+        "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Model\\FreeBlog.Model.csproj",
+        "packagesPath": "C:\\Users\\PX\\.nuget\\packages\\",
+        "outputPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FreeSql": {
+              "target": "Package",
+              "version": "[2.5.200, )"
+            },
+            "FreeSql.DbContext": {
+              "target": "Package",
+              "version": "[2.5.200, )"
+            },
+            "FreeSql.Provider.SqlServer": {
+              "target": "Package",
+              "version": "[2.5.200, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Service\\FreeBlog.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Service\\FreeBlog.Service.csproj",
+        "projectName": "FreeBlog.Service",
+        "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Service\\FreeBlog.Service.csproj",
+        "packagesPath": "C:\\Users\\PX\\.nuget\\packages\\",
+        "outputPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.IService\\FreeBlog.IService.csproj": {
+                "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.IService\\FreeBlog.IService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FreeSql.Repository": {
+              "target": "Package",
+              "version": "[2.5.200, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Web\\FreeBlog.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Web\\FreeBlog.Web.csproj",
+        "projectName": "FreeBlog.Web",
+        "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Web\\FreeBlog.Web.csproj",
+        "packagesPath": "C:\\Users\\PX\\.nuget\\packages\\",
+        "outputPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Api\\FreeBlog.Api.csproj": {
+                "projectPath": "D:\\工作代码2021\\2021\\中院深化全国文明单位创建管理系统\\参考\\FreeBlog\\FreeBlog.Api\\FreeBlog.Api.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

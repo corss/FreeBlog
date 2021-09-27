@@ -1,0 +1,315 @@
+﻿.form td {
+    padding: 5px;
+    position: relative;
+}
+
+    .form td label.error {
+        right: 10px;
+        top: 15px;
+    }
+
+.ztree li ul.line {
+    border-top: 0;
+}
+
+.Hui-close {
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 1px;
+    top: 11px;
+    height: 29px;
+    line-height: 30px;
+    background-color: #fff;
+    padding: 0 3px;
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.piclist .tip {
+    color: #aaa;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.piclist li {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    float: left;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3px;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    margin-right: 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    .piclist li img {
+        width: 100%;
+        height: 100px;
+        border-radius: 5px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center center;
+        object-fit: cover;
+    }
+
+    .piclist li:hover, .piclist li.active {
+        border-color: #28c;
+    }
+
+    .piclist li .panel {
+        display: none;
+    }
+
+        .piclist li .panel i {
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+    .piclist li:hover .panel {
+        display: block;
+        width: 100%;
+        text-align: center;
+        display: block;
+        z-index: 999;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: rgba( 0, 0, 0, 0.5 );
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .piclist li.active:after {
+        content: "默认";
+        padding: 0 5px;
+        display: block;
+        z-index: 999;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #fff;
+        background-color: #28c;
+        border-radius: 0 0 0 5px;
+    }
+
+    .piclist li.addPic {
+        line-height: 100px;
+        text-align: center;
+    }
+
+        .piclist li.addPic i {
+            font-size: 35px;
+            color: #ddd;
+        }
+
+        .piclist li.addPic:hover:before {
+            display: none;
+        }
+
+        .piclist li.addPic:hover i {
+            color: #28c;
+        }
+
+    .piclist li.addVideo {
+        line-height: 100px;
+        text-align: center;
+    }
+
+        .piclist li.addVideo i {
+            font-size: 35px;
+            color: #ddd;
+        }
+
+        .piclist li.addVideo:hover:before {
+            display: none;
+        }
+
+        .piclist li.addVideo:hover i {
+            color: #28c;
+        }
+
+#popPic .poppiclist .popPictd {
+    width: 100px;
+    height: 100px;
+    padding: 3px;
+}
+
+    #popPic .poppiclist .popPictd img {
+        width: 100%;
+        height: 100px;
+    }
+
+.piclist ul li {
+    position: relative;
+}
+
+.piclist .play {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    background-color: rgba(0, 0, 0, 0.3);
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+textarea {
+    border: 1px solid #eee;
+    width: 100%;
+}
+
+.clear:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.list li {
+    background-color: #fff;
+    position: relative;
+    height: auto;
+    padding: 18px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    margin-top: 10px;
+}
+
+    .list li .del {
+        display: block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 25px;
+        color: red;
+        font-size: 25px;
+        text-align: center;
+        background-color: #fff;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        border: 1px solid red;
+        cursor: pointer;
+    }
+
+    .list li .img {
+        width: 25%;
+        float: left;
+        cursor: pointer;
+    }
+
+    .list li .text {
+        width: 75%;
+        text-indent: 5px;
+        float: left;
+    }
+
+        .list li .text span {
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        .list li .text textarea {
+            font-size: 16px;
+            height: 90px;
+            max-height: 100px;
+        }
+
+.list .add {
+    color: #aaa;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    width: 40px;
+    font-size: 25px;
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.list li .up, .list li .down {
+    display: block;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 25px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    text-align: center;
+    color: #659fdf;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.list li .down {
+    top: auto;
+    bottom: 2px;
+}
+
+#ggsj {
+    border: 1px solid #ccc;
+    padding: 3px 10px;
+}
+
+    #ggsj label {
+        width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-wrap: normal;
+        display: inline-block;
+        text-align: left;
+        cursor: pointer;
+        margin-right: 1em;
+    }
+
+    #ggsj div {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+    table td {
+        border: 1px solid #ccc;
+        padding: 5px;
+    }
+
+#result input {
+    display: block;
+}
+
+.price input, .price2 input, .count input {
+    width: 60px;
+    height: 26px;
+}
+
+.no input {
+    width: 100%;
+    height: 26px;
+}

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\自学作业存放处\FreeSqlBlog\FreeBlog\FreeBlog.Api\bin\Debug\net5.0</_PublishTargetUrl>
+    <History>True|2021-08-27T01:52:57.1595657Z;True|2021-08-26T16:02:17.5658959+08:00;True|2021-08-26T09:23:07.9394764+08:00;True|2021-08-25T17:28:15.5669285+08:00;False|2021-08-25T17:26:30.9984537+08:00;True|2021-08-25T16:57:23.5236248+08:00;True|2021-08-25T16:52:39.9929225+08:00;True|2021-08-25T16:31:07.7209563+08:00;True|2021-08-25T16:24:33.3725181+08:00;</History>
+  </PropertyGroup>
+</Project>

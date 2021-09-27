@@ -1,0 +1,110 @@
+  //依赖注入
+ if (Appsettings.app(new string[] { "AppSettings", "LogAOP", "Enabled" }).ObjToBool())
+            {
+                builder.RegisterType<logLogAOP>();
+                cacheType.Add(typeof(logLogAOP));
+            }
+
+//中间件
+            //MiniProfiler
+            app.UseMiniProfiler();
+
+
+//配置文件
+    "LogAOP": {
+      "Enabled": true
+    }
+
+
+//logaop
+ public class logLogAOP : IInterceptor
+    {
+        static ReaderWriterLockSlim LogWriteLock = new ReaderWriterLockSlim();
+        static int WritedCount = 0;
+        static int FailedCount = 0;
+        /// <summary>
+        /// 实例化IInterceptor唯一方法 
+        /// </summary>
+        /// <param name="invocation">包含被拦截方法的信息</param>
+        public void Intercept(IInvocation invocation)
+        {
+
+            // 事前处理: 在服务方法执行之前,做相应的逻辑处理
+            var dataIntercept = "" +
+                $"【当前执行方法】：{ invocation.Method.Name} \r\n" +
+                $"【携带的参数有】： {string.Join(", ", invocation.Arguments.Select(a => (a ?? "").ToString()).ToArray())} \r\n";
+
+            MiniProfiler.Current.Step($"执行Service方法：{invocation.Method.Name}() -> ");
+            // 执行当前访问的服务方法,(注意:如果下边还有其他的AOP拦截器的话,会跳转到其他的AOP里)
+            invocation.Proceed();
+
+            // 事后处理: 在service被执行了以后,做相应的处理,这里是输出到日志文件
+            dataIntercept += ($"【执行完成结果】：{invocation.ReturnValue}");
+
+            // 输出到日志文件
+            Parallel.For(0, 1, e =>
+            {
+                OutSql2Log("AOPLog", new string[] { dataIntercept });
+            });
+
+        }
+
+        public static void OutSql2Log(string prefix, string[] dataParas, bool IsHeader = true)
+        {
+            try
+            {
+                //设置读写锁为写入模式独占资源，其他写入请求需要等待本次写入结束之后才能继续写入
+                //注意：长时间持有读线程锁或写线程锁会使其他线程发生饥饿 (starve)。 为了得到最好的性能，需要考虑重新构造应用程序以将写访问的持续时间减少到最小。
+                //      从性能方面考虑，请求进入写入模式应该紧跟文件操作之前，在此处进入写入模式仅是为了降低代码复杂度
+                //      因进入与退出写入模式应在同一个try finally语句块内，所以在请求进入写入模式之前不能触发异常，否则释放次数大于请求次数将会触发异常
+                LogWriteLock.EnterWriteLock();
+
+                var folderPath = Path.Combine("C:\\Log", "Log.txt");
+                //if (!Directory.Exists(folderPath))
+                //{
+                //    Directory.CreateDirectory(folderPath);
+                //}
+                //string logFilePath = Path.Combine(path, $@"{filename}.log");
+                //var logFilePath = FileHelper.GetAvailableFileWithPrefixOrderSize(folderPath, prefix);
+
+                //var now = DateTime.Now;
+                string logContent = String.Join("\r\n", dataParas);
+                if (IsHeader)
+                {
+                    logContent = (
+                       "--------------------------------\r\n" +
+                       DateTime.Now + "|\r\n" +
+                       String.Join("\r\n", dataParas) + "\r\n"
+                       );
+                }
+
+                //if (logContent.IsNotEmptyOrNull() && logContent.Length > 500)
+                //{
+                //    logContent = logContent.Substring(0, 500) + "\r\n";
+                //}
+
+                File.AppendAllText(folderPath, logContent);
+                WritedCount++;
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+                FailedCount++;
+            }
+            finally
+            {
+                //退出写入模式，释放资源占用
+                //注意：一次请求对应一次释放
+                //      若释放次数大于请求次数将会触发异常[写入锁定未经保持即被释放]
+                //      若请求处理完成后未释放将会触发异常[此模式不下允许以递归方式获取写入锁定]
+                LogWriteLock.ExitWriteLock();
+            }
+        }
+    }
+
+
+
+//前端mvc显示
+@using StackExchange.Profiling
+@addTagHelper *, MiniProfiler.AspNetCore.Mvc
+<mini-profiler />

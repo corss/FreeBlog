@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreeSql.Repository" Version="2.5.200" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FreeBlog.IService\FreeBlog.IService.csproj" />
+  </ItemGroup>
+
+</Project>

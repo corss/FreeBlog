@@ -1,0 +1,1172 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FreeBlog.Api</name>
+    </assembly>
+    <members>
+        <member name="T:FreeBlog.Api.Controllers.AdminBaseController">
+            <summary>
+            用户接口父类
+            </summary>
+            
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.AdminBaseController.GetUserID">
+            <summary>
+            获取UserID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.AdminBaseController.TokenDecode">
+            <summary>
+            解码Token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.AdminBaseController.GetAccess(System.Int32,System.String)">
+            <summary>
+            获取菜单权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.CommonHelper.SetSession``1(System.String,``0)">
+            <summary>
+            存储对象
+            </summary>
+            <typeparam name="T">对象</typeparam>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.CommonHelper.GetSession``1(System.String)">
+            <summary>
+            获取对象
+            </summary>
+            <typeparam name="T">对象</typeparam>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.CommonHelper.SetSession(System.String,System.String)">
+            <summary>
+            设置Session
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.CommonHelper.GetSession(System.String)">
+            <summary>
+            获取Session
+            </summary>
+            <param name="key">键</param>
+            <returns>返回对应的值</returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.CommonHelper.RemoveSession(System.String)">
+            <summary>
+            清除Session
+            </summary>
+            <param name="key">键</param>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.CommonHelper.ClearSession">
+            <summary>
+            清除所有Session
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.CommonHelper.AddCookie(System.String,System.String)">
+            <summary>
+            添加cookie缓存不设置过期时间
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.CommonHelper.AddCookie(System.String,System.String,System.Int32)">
+            <summary>
+            添加cookie缓存设置过期时间
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="time"></param>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.CommonHelper.DeleteCookie(System.String)">
+            <summary>
+            删除cookie缓存
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.CommonHelper.GetCookieValue(System.String)">
+            <summary>
+            根据键获取对应的cookie
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.IndexController">
+            <summary>
+            首页
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.IndexController.UpdatePwd(System.String,System.String,System.String)">
+            <summary>
+            修改密码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.IndexController.Index">
+            <summary>
+            获取左侧菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.IndexController.Index2">
+            <summary>
+            用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.Info.ArticleController">
+            <summary>
+            任务分配
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleController.Item(System.Int32)">
+            <summary>
+            查看详情,输入相应ID查询对应ID的内容，除超级管理员（系统管理员）外登陆，只能查看自己部门的任务分配详情内容
+            </summary>
+            <param name="ID">任务表ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleController.List(System.Int32,System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            任务列表展示,分页查看，默认是15条数据一页，超级管理员(系统管理员)能查看所有的任务列表,其他角色只能查看自己部门的任务列表,
+            通过查看是否完成得到代办列表，通过查看是否与其获得逾期列表
+            </summary>
+            <param name="pageIndex">当前页</param>
+            <param name="ArticleMenuID">栏目id</param>
+            <param name="State">状态</param>
+            <param name="Title">标题</param>
+            <param name="IsComplete">是否完成</param>
+            <param name="IsOvertime">是否逾期</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleController.GetMenuLevel">
+            <summary>
+            栏目数据，评测项目管理栏目
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleController.Update(FreeBlog.Model.ViewModels.Api.ArticlePostViewModel)">
+            <summary>
+            修改任务分配的列表
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleController.Add(FreeBlog.Model.ViewModels.Api.ArticlePostViewModel)">
+            <summary>
+            添加
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleController.SetState(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.Info.ArticleMenuController">
+            <summary>
+            评测项目管理
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleMenuController.List(System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            测评项目列表
+            </summary>
+            <param name="BeginDate">开始时间</param>
+            <param name="EndDate">结束时间</param>
+            <param name="State">状态</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleMenuController.Item(System.Int32)">
+            <summary>
+            根据id查
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleMenuController.Item(System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            评测项目新增
+            </summary>
+            <param name="ParentID">父类id</param>
+            <param name="Names">名称</param>
+            <param name="ENames">存英文名或副标题</param>
+            <param name="Sorting">顺序</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleMenuController.Item(System.Int32,System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            评测项目更新
+            </summary>
+            <param name="ID">选择id</param>
+            <param name="ParentID">父类id</param>
+            <param name="Names">名称</param>
+            <param name="ENames">存英文名或副标题</param>
+            <param name="Sorting">顺序</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleMenuController.ModifyParentID(System.Int32,System.Int32)">
+            <summary>
+            更换父级
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.ArticleMenuController.Enable(System.String)">
+            <summary>
+            启用禁用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.Info.StandingBookController">
+            <summary>
+            台账管理
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.StandingBookController.List2">
+            <summary>
+            列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.StandingBookController.List(System.Int32,System.String)">
+            <summary>
+            /列表显示待分页
+            </summary>
+            <param name="pageIndex">第几页</param>
+            <param name="title">标题</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.StandingBookController.Add(FreeBlog.Model.Models.StandingBook)">
+            <summary>
+            /添加
+            </summary>
+            <param name="w"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.StandingBookController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.StandingBookController.Update(FreeBlog.Model.Models.StandingBook)">
+            <summary>
+            编辑
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.StandingBookController.Update(System.Int32,System.String,System.Int32)">
+            <summary>
+            部分编辑
+            </summary>
+            <param name="ID">ID</param>
+            <param name="Names">名称</param>
+            <param name="Sorting">顺序</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.StandingBookController.InsertPicture(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Http.IFormFileCollection)">
+            <summary>
+            上传附件，返回的response是上传图片的相对连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Info.StandingBookController.Export(System.Int32,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            a标签页面跳转导出docx,根据部门判断下载内容
+            </summary>
+            <param name="FID">评测项目ID</param>
+            <param name="environment"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.LoginController">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.LoginController.Login(System.String,System.String,System.String)">
+            <summary>
+            登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.LoginController.VerificationCode">
+            <summary>
+            获取验证码
+            </summary>
+            <returns>文件流</returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.LoginController.RefreshToken(System.String)">
+            <summary>
+            请求刷新Token（以旧换新）
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceController">
+            <summary>
+            干警成员
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceController.TeamList(System.Int32,System.Int32,System.String,System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Int32})">
+            <summary>
+            干警列表显示
+            </summary>
+            <param name="pageIndex">页数</param>
+            <param name="Name">姓名</param>
+            <param name="PFID">所属队伍</param>
+            <param name="IsEnable">账号是否启用</param>
+            <param name="PFRole">角色，1队长2队员</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceController.Addusers(FreeBlog.Model.Models.PoliceModel.PoliceInfo)">
+            <summary>
+            添加成员
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceController.SetTeamState(System.String)">
+            <summary>
+            成员删除
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceController.Updateusers(FreeBlog.Model.Models.PoliceModel.PoliceInfo)">
+            <summary>
+            修改成员
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceController.TeamItem(System.Int32)">
+            <summary>
+            显示成员信息
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceGradeController">
+            <summary>
+            分数管理接口
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceGradeController.List(System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>
+            查询列表
+            </summary>
+            <param name="pageIndex">当前页码</param>
+            <param name="Name">姓名</param>
+            <param name="AddTime">开始区间</param>
+            <param name="EndTime">结束区间</param>
+            <param name="Pid">分数来源所属活动表ID，0表示由分数管理添加</param>
+            <param name="IsProj">是否由分数管理添加</param>    
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceGradeController.Item(System.Int32)">
+            <summary>
+            根据id查
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceGradeController.Add(FreeBlog.Model.Models.PoliceModel.PoliceGrade)">
+            <summary>
+            添加
+            </summary>
+            <param name="pg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceGradeController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="ID">可多行如：1,2,3</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceGradeController.Update(FreeBlog.Model.Models.PoliceModel.PoliceGrade)">
+            <summary>
+            修改
+            </summary>
+            <param name="pg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceGradeController.ListRep(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            导出列表查看
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="Name"></param>
+            <param name="AddTime"></param>
+            <param name="EndTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceGradeController.Export(System.String,System.String,System.String)">
+            <summary>
+            a标签页面跳转导出
+            </summary>
+            <param name="RoleID">选择用户</param>
+            <param name="StateID">选择状态</param>
+            <param name="Title">选择标题</param>
+            <param name="Phone">选择手机号</param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceprojectMenuController">
+            <summary>
+            干警项目管理
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceprojectMenuController.List(System.Nullable{System.Boolean},System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            项目列表
+            </summary>
+            <param name="IsEnable">是否开启</param>
+            <param name="BeginDate">开始时间</param>
+            <param name="EndDate">结束时间</param>
+            <param name="Fid">所负责小队</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceprojectMenuController.Item(System.Int32)">
+            <summary>
+            根据id查
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceprojectMenuController.Item(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            评测项目新增
+            </summary>
+            <param name="ParentID">父类id</param>
+            <param name="Names">名称</param>
+            <param name="Sorting">顺序</param>
+            <param name="Fid">负责小队ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceprojectMenuController.Item(System.Int32,System.Int32,System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            评测项目更新
+            </summary>
+            <param name="ID">选择id</param>
+            <param name="ParentID">父类id</param>
+            <param name="Names">名称</param>
+            <param name="Sorting">顺序</param>
+            <param name="AddDate">添加时间</param>
+            <param name="Fid">负责小队ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceprojectMenuController.ModifyParentID(System.Int32,System.Int32)">
+            <summary>
+            更换父级
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.PoliceC.PoliceprojectMenuController.Enable(System.String)">
+            <summary>
+            启用禁用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.Poilce.PoliceForceController">
+            <summary>
+            干警队伍
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Poilce.PoliceForceController.List2">
+            <summary>
+            查看列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Poilce.PoliceForceController.List(System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            列表显示带分页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Poilce.PoliceForceController.Add(System.String,System.Int32,System.Int32)">
+            <summary>
+            添加
+            </summary>
+            <param name="Names">名称</param>
+            <param name="Sorting">顺序</param>
+            <param name="pid">队长ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Poilce.PoliceForceController.Update(FreeBlog.Model.Models.PoliceModel.PoliceForce)">
+            <summary>
+            修改
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Poilce.PoliceForceController.Delete(System.Int32)">
+            <summary>
+            数据删除
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Poilce.PoliceForceController.SetTeamState(System.String)">
+            <summary>
+            删除,修改状态为未启用
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.Police.PoliceprojectController">
+            <summary>
+            干警活动管理
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Police.PoliceprojectController.Item(System.Int32)">
+            <summary>
+            详情
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Police.PoliceprojectController.List(System.Int32,System.Int32,System.Nullable{System.Int32},System.Nullable{System.Boolean},System.String,System.Nullable{System.Int32})">
+            <summary>
+            任务列表展示
+            </summary>
+            <param name="pageIndex">当前页</param>
+            <param name="ProjectMenuID">栏目id</param>
+            <param name="IsEnable">状态</param>
+            <param name="Name">标题</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Police.PoliceprojectController.GetMenuLevel">
+            <summary>
+            栏目数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Police.PoliceprojectController.Update(FreeBlog.Model.ViewModels.Api.PoliceprojectModel)">
+            <summary>
+            修改
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Police.PoliceprojectController.Add(FreeBlog.Model.ViewModels.Api.PoliceprojectModel)">
+            <summary>
+            添加
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.Police.PoliceprojectController.SetIsEnable(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.System.ConfigBaseController">
+            <summary>
+            网络基本配置
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.System.ConfigController">
+            <summary>
+            全局配置
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ConfigController.List(System.Int32,System.String)">
+            <summary>
+            列表显示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ConfigController.Item(System.Int32)">
+            <summary>
+            详情显示
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ConfigController.Add(System.String,System.String,System.String)">
+            <summary>
+            添加
+            </summary>
+            <param name="Title"></param>
+            <param name="Number"></param>
+            <param name="Value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ConfigController.Update(FreeBlog.Model.Models.Config)">
+            <summary>
+            修改
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.System.DepartmentController">
+            <summary>
+            部门设置
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.DepartmentController.Index(System.String)">
+            <summary>
+            部门树形列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.DepartmentController.Add(FreeBlog.Model.Models.Department)">
+            <summary>
+            添加
+            </summary>
+            <param name="Names">名称</param>
+            <param name="Sorting">顺序</param>
+            <param name="Remake">备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.DepartmentController.Delete(System.Int32)">
+            <summary>
+            删除部门
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.DepartmentController.Update(FreeBlog.Model.Models.Department)">
+            <summary>
+            编辑部门
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.DepartmentController.Item(System.Int32)">
+            <summary>
+            根据id查询部门
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.DepartmentController.List(System.Int32)">
+            <summary>
+            根据上级部门id获取部门列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.DepartmentController.parent">
+            <summary>
+            上级部门树
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.System.ExceptionLogController">
+            <summary>
+            异常日志
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ExceptionLogController.List(System.Int32,System.Nullable{System.Int32},System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.Boolean})">
+            <summary>
+            列表显示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ExceptionLogController.Solve(System.String)">
+            <summary>
+            批量处理
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ExceptionLogController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ExceptionLogController.Item(System.Int32)">
+            <summary>
+            详情查看
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.System.ModuleController">
+            <summary>
+            接口列表
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ModuleController.List1">
+            <summary>
+            获取全部接口api
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ModuleController.List(System.Int32,System.String)">
+            <summary>
+            获取全部接口api分页
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ModuleController.Item(System.Int32)">
+            <summary>
+            详情显示
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ModuleController.Post(FreeBlog.Model.Models.Module)">
+            <summary>
+            添加一条接口信息
+            </summary>
+            <param name="module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ModuleController.Put(FreeBlog.Model.Models.Module)">
+            <summary>
+            更新接口信息
+            </summary>
+            <param name="module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.ModuleController.Enable(System.String,System.Boolean)">
+            <summary>
+            删除接口
+            </summary>
+            <param name="ID"></param>
+            <param name="Enabled"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.System.PermissionsController">
+            <summary>
+            权限管理
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.PermissionsController.GetRoles">
+            <summary>
+            获取角色数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.PermissionsController.GetMenus">
+            <summary>
+            获取菜单数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.PermissionsController.UserList(System.Int32)">
+            <summary>
+            根据id显示权限
+            </summary>
+            <param name="RoleID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.PermissionsController.SetMenus(System.Int32,System.String,System.String)">
+            <summary>
+            更新权限菜单
+            </summary>
+            <param name="RoleID"></param>
+            <param name="Role_value">接口表ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.System.RoleController">
+            <summary>
+            角色接口
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.RoleController.List2">
+            <summary>
+            列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.RoleController.List(System.Int32,System.Int32,System.String)">
+            <summary>
+            列表显示带分页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.RoleController.Add(FreeBlog.Model.Models.Role)">
+            <summary>
+            添加角色
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.RoleController.Update(FreeBlog.Model.Models.Role)">
+            <summary>
+            编辑
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.RoleController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.RoleController.getAssignPermissionTree(System.Int32,System.Int32)">
+            <summary>
+            分配权限--树形数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.RoleController.roleAssignSave(FreeBlog.Model.ViewModels.roleAssignSaveModel)">
+            <summary>
+            分配权限--保存
+            </summary>
+            <param name="roleId"></param>
+            <param name="list">菜单权限ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.System.UserController">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.UserController.Item">
+            <summary>
+            自己详情
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.UserController.Item(System.Int32)">
+            <summary>
+            根据Id查询用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.UserController.GetRoleViewModel">
+            <summary>
+            获取角色全部信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.UserController.List(System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            分页查询角色id
+            </summary>
+            <param name="pageIndex">当前页</param>
+            <param name="name"></param>
+            <param name="pagSize">页容量</param>
+            <param name="roleId"></param>
+            <param name="userId">当前登录用户id</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.UserController.list1(System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            根据部门id查用户
+            </summary>
+            <param name="currentPage">当前页</param>
+            <param name="name"></param>
+            <param name="pagSize">页容量</param>
+            <param name="deptId"></param>
+            <param name="userId">当前登录用户id</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.UserController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.UserController.SysItem(FreeBlog.Model.Models.UserInfo)">
+            <summary>
+            添加
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.System.UserController.SysItem2(FreeBlog.Model.Models.UserInfo)">
+            <summary>
+            编辑
+            </summary>
+            <param name="ID"></param>
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.LoginLogController">
+            <summary>
+            登录日志
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.LoginLogController.List(System.Int32,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            列表显示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.LoginLogController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Controllers.Admin.MenuController">
+            <summary>
+            菜单管理
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.MenuController.Index">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.MenuController.Enable(System.String,System.Boolean)">
+            <summary>
+            启用禁用
+            </summary>
+            <param name="ID"></param>
+            <param name="open"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.MenuController.Item(System.Int32)">
+            <summary>
+            详情显示
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.MenuController.GetMenu">
+            <summary>
+            查询下拉框菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.MenuController.Add(FreeBlog.Model.Models.Menu)">
+            <summary>
+            添加菜单
+            </summary>
+            <param name="menu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.MenuController.Update(FreeBlog.Model.Models.Menu)">
+            <summary>
+            编辑
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.MenuController.Delete(System.Int32)">
+            <summary>
+            删除菜单
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Controllers.Admin.MenuController.parent">
+            <summary>
+            获取上级菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Extensions.AOP.BlogLogAOP">
+            <summary>
+            拦截器BlogLogAOP 继承IInterceptor接口
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Extensions.AOP.BlogLogAOP.Intercept(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            实例化IInterceptor唯一方法 
+            </summary>
+            <param name="invocation">包含被拦截方法的信息</param>
+        </member>
+        <member name="T:FreeBlog.Api.Extensions.AutoMapperSetup">
+            <summary>
+            Automapper 启动服务
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Extensions.ConfigureAutofac.Load(Autofac.ContainerBuilder)">
+            <summary>
+            加载调用
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="M:FreeBlog.Api.Extensions.JwtHelper.IssueJwt(FreeBlog.Api.Extensions.JwtHelper.TokenModelJwt)">
+            <summary>
+            颁发JWT字符串
+            </summary>
+            <param name="tokenModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Extensions.JwtHelper.SerializeJwt(System.String)">
+            <summary>
+            解析
+            </summary>
+            <param name="jwtStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Extensions.JwtHelper.SerializeJwt2(System.String)">
+            <summary>
+            解析 获取ID
+            </summary>
+            <param name="jwtStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.Extensions.JwtHelper.TokenModelJwt">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Api.Extensions.JwtHelper.TokenModelJwt.Uid">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Api.Extensions.JwtHelper.TokenModelJwt.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Api.Extensions.JwtHelper.TokenModelJwt.Work">
+            <summary>
+            职能
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Extensions.MiddlewareHelpers.UseExceptionHandlerMidd(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            异常处理中间件
+            </summary>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FreeBlog.Api.ApiGroup.ApiGroupAttribute">
+            <summary>
+            系统分组特性
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Api.ApiGroup.ApiGroupNames">
+            <summary>
+            系统分组枚举值
+            </summary>
+        </member>
+        <member name="F:FreeBlog.Api.ApiGroup.ApiGroupNames.AdminAuth">
+            <summary>
+            登录认证
+            </summary>
+        </member>
+        <member name="F:FreeBlog.Api.ApiGroup.ApiGroupNames.SBook">
+            <summary>
+            台账
+            </summary>
+        </member>
+        <member name="F:FreeBlog.Api.ApiGroup.ApiGroupNames.AdminSystem">
+            <summary>
+            后台系统管理
+            </summary>
+        </member>
+        <member name="F:FreeBlog.Api.ApiGroup.ApiGroupNames.AdminPolice">
+            <summary>
+            干警管理
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Api.ApiGroup.GroupInfoAttribute">
+            <summary>
+            系统模块枚举注释
+            </summary>
+        </member>
+        <member name="T:FreeBlog.Api.Filter.GlobalExceptionsFilter">
+            <summary>
+            全局异常错误日志
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Filter.GlobalExceptionsFilter.WriteLog(System.String,System.Exception)">
+            <summary>
+            自定义返回格式
+            </summary>
+            <param name="throwMsg"></param>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="P:FreeBlog.Api.Filter.JsonErrorResponse.Message">
+            <summary>
+            生产环境的消息
+            </summary>
+        </member>
+        <member name="P:FreeBlog.Api.Filter.JsonErrorResponse.DevelopmentMessage">
+            <summary>
+            开发环境的消息
+            </summary>
+        </member>
+        <member name="M:FreeBlog.Api.Helper.APIHelper.GetMenu(System.Int32,System.Collections.Generic.IEnumerable{FreeBlog.Model.Models.Menu},FreeBlog.Model.Models.Role)">
+            <summary>
+            获取菜单列表的子项
+            </summary>
+            <param name="FID"></param>
+            <param name="list2"></param>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Helper.APIHelper.GetMenuList(System.Int32,System.Collections.Generic.IEnumerable{FreeBlog.Model.Models.Menu},FreeBlog.Model.Models.Role,System.Boolean)">
+            <summary>
+            获取左菜单子集
+            </summary>
+            <param name="FID"></param>
+            <param name="list2"></param>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Helper.APIHelper.GetDepartment(System.Int32,System.Collections.Generic.IEnumerable{FreeBlog.Model.Models.Department})">
+            <summary>
+            获取部门列表的子项
+            </summary>
+            <param name="FID"></param>
+            <param name="list2"></param>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Helper.ByteHelper.BytesToStream(System.Byte[])">
+            将 byte[] 转成 Stream
+        </member>
+        <member name="M:FreeBlog.Api.Helper.ImageFile.UpLoadPhoto(Microsoft.AspNetCore.Http.IFormFile,System.String)">
+            <summary>
+            上传图片
+            </summary>
+            <param name="formFile"></param>
+            <param name="path">路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Helper.ImageFile.UpLoadFile(Microsoft.AspNetCore.Http.IFormFile,System.String)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="formFile"></param>
+            <param name="path">路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Helper.ImageFile.LoadingPhoto(System.String,System.String)">
+            <summary>
+            加载图片
+            </summary>
+            <param name="path"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Helper.SpireDocHelper.SwaggerConversHtml(System.String,System.String,System.String@)">
+            <summary>
+            静态页面转文件
+            </summary>
+            <param name="html">静态页面html</param>
+            <param name="type">文件类型</param>
+            <param name="contenttype">上下文类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:FreeBlog.Api.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            Autofac注入
+            </summary>
+            <param name="containerBuilder"></param>
+        </member>
+    </members>
+</doc>

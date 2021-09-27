@@ -1,0 +1,212 @@
+﻿
+@model FreeBlog.Model.ViewModels.UserViewModel
+
+<style type="text/css">
+    .select-box.inline, .select-box.inline .select {
+        width: 100%;
+    }
+</style>
+<div id="app" class="page-container">
+    <input type="hidden" asp-for="ID" />
+    <table width="100%" class="form">
+        <tr class="row ">
+            <td align="right" width="80">
+                <label class="form-label" for="UserName">
+                    <span class=" c-red">*</span> 用户名：
+                </label>
+            </td>
+            <td>
+                <input class="input-text" asp-for="UserName" placeholder="字母+数字" maxlength="20" autocomplete="off" />
+            </td>
+            <td align="right" width="80">
+                <label class="form-label" for="NickName">
+                    <span class=" c-red">*</span> 昵称：
+                </label>
+            </td>
+            <td>
+                <input class="input-text" asp-for="NickName" maxlength="20" />
+            </td>
+        </tr>
+        <tr class="row ">
+            <td align="right" width="80">
+                <label class="form-label" for="Password">
+                    密码：
+                </label>
+            </td>
+            <td>
+                <input type="password" class="input-text" asp-for="Password" placeholder="不填写默认密码" maxlength="20" autocomplete="off" />
+            </td>
+            <td align="right">
+                <label class="form-label" for="Position">
+                    职务：
+                </label>
+            </td>
+            <td>
+                <input class="input-text" asp-for="Position" maxlength="20" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label class="form-label" for="FullName">
+                    姓名：
+                </label>
+            </td>
+            <td>
+                <input class="input-text" asp-for="FullName" maxlength="20" />
+            </td>
+            <td align="right">
+                <label class="form-label" for="MobilePhone">
+                    手机：
+                </label>
+            </td>
+            <td>
+                <input class="input-text" asp-for="MobilePhone" maxlength="11" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label class="form-label" for="RoleID">
+                    <span class=" c-red">*</span> 角色：
+                </label>
+            </td>
+            <td>
+                <span class="select-box inline">
+                    @Html.DropDownListFor(o => o.RoleID, ViewBag.RoleList as IEnumerable<SelectListItem>, new { @class = "select" })
+                </span>
+            </td>
+            <td align="right">
+                <label class="form-label" for="rblGender">
+                    性别：
+                </label>
+            </td>
+            <td>
+                <label>
+                    @Html.RadioButtonFor(Model => Model.Gender, 0, new { @id = "Gender0", @name = "Gender" })未知
+                </label>
+                <label>
+                    @Html.RadioButtonFor(Model => Model.Gender, 1, new { @id = "Gender1", @name = "Gender" })男
+                </label>
+                <label>
+                    @Html.RadioButtonFor(Model => Model.Gender, 2, new { @id = "Gender2", @name = "Gender" })女
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label class="form-label" for="QQ">
+                    QQ：
+                </label>
+            </td>
+            <td>
+                <input class="input-text" asp-for="QQ" maxlength="20" />
+            </td>
+            <td align="right">
+                <label class="form-label" for="Mail">
+                    邮箱：
+                </label>
+            </td>
+            <td>
+                <input class="input-text" asp-for="Mail" maxlength="20" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label class="form-label" for="IdCard">
+                    身份证：
+                </label>
+            </td>
+            <td>
+                <input class="input-text" asp-for="IdCard" maxlength="20" />
+            </td>
+            <td align="right">
+                <label class="form-label" for="rblState">
+                    状态：
+                </label>
+            </td>
+            <td>
+                <label>
+                    @Html.RadioButtonFor(Model => Model.State, 1, new { @name = "Gender" })未审核
+                </label>
+                <label>
+                    @Html.RadioButtonFor(Model => Model.State, 2, new { @name = "Gender" })已审核
+                </label>
+                <label>
+                    @Html.RadioButtonFor(Model => Model.State, 3, new { @name = "Gender" })已禁用
+                </label>
+                <label>
+                    @Html.RadioButtonFor(Model => Model.State, 4, new { @name = "Gender" })已删除
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">
+                <a id="btnSubmit" class="btn btn-secondary radius">&nbsp;&nbsp;@ViewBag.Title&nbsp;&nbsp;</a> &nbsp;
+                <a onclick="layer_close();" class="btn btn-default radius">&nbsp;&nbsp;取消&nbsp;&nbsp;</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").on("click", function () {
+            let UserName = $("#UserName").val();
+            let NickName = $("#NickName").val();
+            var RoleID = $("#RoleID").val();
+            if (!UserName) {
+                layers.Info("请输入用户名");
+            } else if (!NickName) {
+                layers.Info("请输入昵称");
+            } else if (RoleID == '0') {
+                layers.Info("请选择角色");
+            }
+            else {
+                var index = layer.load(0, { shade: [0.1, '#000'] });  // 加载层
+                $.ajax({
+                    type: "post", url: "/User/SysItem", dataType: 'json', async: true,
+                    data: {
+                        ID: $("#ID").val(),
+                        UserName: UserName,
+                        NickName: NickName,
+                        Password: $("#Password").val(),
+                        Position: $("#Position").val(),
+                        FullName: $("#FullName").val(),
+                        MobilePhone: $("#MobilePhone").val(),
+                        RoleID: RoleID,
+                        Gender: $('input:radio[name=Gender]:checked').val(),
+                        QQ: $("#QQ").val(),
+                        Mail: $("#Mail").val(),
+                        IdCard: $("#IdCard").val(),
+                        State: $('input:radio[name=State]:checked').val(),
+                        //BirthDate: app.BirthDate,
+                    },
+                    success: function (e) {
+                        layer.close(index); // 隐藏加载层
+                        if (e.success) {
+                            layers.alertOK('提交成功', 5, 'parent.sxs();layers.close();');
+                        } else
+                            layers.alertNO(e.msg);
+                    }
+                });
+            }
+        });
+    });
+    //let that;
+    //let app = new Vue({
+    //    el: '#app',
+    //    data: {
+    //        BirthDate: ''
+    //    },
+    //    created: function () {
+    //        that = this;
+    //    },
+    //    mounted: function () { },
+    //    methods: {
+    //        changeDate1: function (date) {
+    //            that.BirthDate = date;
+    //        },
+    //    },
+    //});
+    //function sxs() {
+    //    app.getData();
+    //}
+</script>
